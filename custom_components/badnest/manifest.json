@@ -3,7 +3,7 @@
   "name": "Bad Nest (A hack around the Nest component to pull from their internal api)",
   "documentation": "https://github.com/scacner/badnest",
   "issue_tracker": "https://github.com/scacner/badnest/issues",
-  "dependencies": {},
+  "dependencies": [],
   "codeowners": [
     "@scacner",
     "@mattsch",
