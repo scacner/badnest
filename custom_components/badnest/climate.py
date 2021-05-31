@@ -188,11 +188,12 @@ class NestClimate(ClimateEntity):
     @property
     def target_temperature(self):
         """Return the temperature we try to reach."""
-        if self.device.device_data[self.device_id]['mode'] \
-                != NEST_MODE_HEAT_COOL \
-                and not self.device.device_data[self.device_id]['eco']:
-            return \
-                self.device.device_data[self.device_id]['target_temperature']
+        if (
+            self.device.device_data[self.device_id]["mode"] != NEST_MODE_HEAT_COOL
+            and self.device.device_data[self.device_id]["mode"] != NEST_MODE_OFF
+            and not self.device.device_data[self.device_id]["eco"]
+        ):
+            return self.device.device_data[self.device_id]["target_temperature"]
         return None
 
     @property
