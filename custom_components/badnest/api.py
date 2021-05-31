@@ -442,7 +442,7 @@ class NestAPI():
         if t_device_id not in self.thermostats:
             _LOGGER.warning("Unknown t-stat id: {0}".format(t_device_id))
             return
-        if s_device_id is None: 
+        if s_device_id is None or t_device_id == s_device_id:
             value = {
                 "active_rcs_sensors": [],
                 "rcs_control_setting": "OFF",
